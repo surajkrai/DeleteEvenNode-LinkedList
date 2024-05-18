@@ -1,1 +1,1 @@
-Delete Even Nodes from SinglyLinkedList by creating a new LL .
+Delete Even Nodes from SinglyLinkedList by creating a new LL using Java .
