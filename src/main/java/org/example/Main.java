@@ -13,7 +13,10 @@ public class Main {
         LinkedListNode head = null;
         LinkedListNode temp = null;
         for(int i=0;i<n;i++){
-            System.out.println("Enter Number: ");
+            if(i==0)
+                System.out.println("Enter First Number: ");
+            else
+                System.out.println("Enter Next Number: ");
             temp= new LinkedListNode(null, scanner.nextInt());
             if(head==null){
                 one=temp;
@@ -24,9 +27,11 @@ public class Main {
             }
         }
 
+        System.out.print("Input Linked List: ");
         printLinkedList(head);
 
         LinkedListNode newList = deleteEven(head);
+        System.out.print("Linked List After Removing Even Nodes: ");
         printLinkedList(newList);
 
     }
