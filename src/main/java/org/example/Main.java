@@ -1,18 +1,32 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        LinkedListNode six = new LinkedListNode(null, 6);
-        LinkedListNode five = new LinkedListNode(six, 5);
-        LinkedListNode four = new LinkedListNode(five, 4);
-        LinkedListNode three = new LinkedListNode(four, 3);
-        LinkedListNode two = new LinkedListNode(three, 2);
-        LinkedListNode one = new LinkedListNode(two, 1);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Number of items: ");
+        int n = scanner.nextInt();
 
-        printLinkedList(one);
+        LinkedListNode one = null;
+        LinkedListNode head = null;
+        LinkedListNode temp = null;
+        for(int i=0;i<n;i++){
+            System.out.println("Enter Number: ");
+            temp= new LinkedListNode(null, scanner.nextInt());
+            if(head==null){
+                one=temp;
+                head=one;
+            }else{
+                one.next=temp;
+                one=temp;
+            }
+        }
 
-        LinkedListNode newList = deleteEven(one);
+        printLinkedList(head);
+
+        LinkedListNode newList = deleteEven(head);
         printLinkedList(newList);
 
     }
@@ -56,7 +70,7 @@ public class Main {
     }
 
     public static boolean isEven(LinkedListNode node) {
-        return node.data % 2 == 0 ? true : false;
+        return node.data % 2 == 0;
     }
 
 }
